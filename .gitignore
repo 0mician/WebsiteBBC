@@ -18,3 +18,7 @@ org-mode-config.el
 .DS_Store
 org-clock-save.el
 emacs-config.el
+
+# data
+data/
+populate_members.py

@@ -1,4 +1,4 @@
-"""WebsiteBBC URL Configuration
+"""website_bbc URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/1.8/topics/http/urls/
@@ -18,5 +18,5 @@ from django.contrib import admin
 
 urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
-    url(r'^members/', include('Members.urls')),
+    url(r'^members/', include('members.urls')),
 ]
