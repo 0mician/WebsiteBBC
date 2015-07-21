@@ -2,5 +2,5 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("<p>Hello there</p>")
-
+    context_dict = {}
+    return render(request, 'members/index.html', context_dict)
