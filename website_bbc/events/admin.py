@@ -1,3 +1,7 @@
 from django.contrib import admin
+from events.models import Event
 
-# Register your models here.
+class EventAdmin(admin.ModelAdmin):
+    list_display = ['name', 'start', 'location', 'uploaded_files']
+
+admin.site.register(Event, EventAdmin)

@@ -7,6 +7,18 @@
 {% block body_block %}
 
 <div class="container">
-  <p>Welcome to the events page of the BBC</p>
+  {% if events_list %}
+    {% for event in events_list %}
+      <h2>{{ event.name }}</h2>
+      <ul>
+        <li>{{ event.start }}</li>
+        <li>{{ event.location }}</li>
+        <li>{{ event.details }}</li>
+        <li><a href="/media/{{ event.uploaded_files }}">file</a></li>
+      </ul>
+    {% endfor %}
+  {% else %}
+    <p>No events yet</p>
+  {% endif %}
 </div>
 {% endblock %}
