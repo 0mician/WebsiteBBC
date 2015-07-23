@@ -1,7 +1,29 @@
-body {
-  padding-top: 70px;
+.row-fluid{text-align:center;}
+.img-responsive{margin:0 auto}
+.img-responsive{vertical-align:middle}
+
+.navbar-custom {
+    background-color: rgb(255, 222, 0);
+    color:rgb(88,88,88) ;
+    border-radius:0;
+    border-style: none;
 }
 
+.navbar-custom .navbar-nav > li > a {
+    color:rgb(88,88,88);
+}
+.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
+    color: rgb(88,88,88);
+    background-color:transparent;
+}
+.navbar-custom .navbar-brand {
+    color:rgb(88,88,88);
+}
+
+.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
+    color: #585847;
+    background-color: #FFC200;
+}
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
