@@ -25,12 +25,15 @@
   
   <body>
     <div class="container-fluid" id="banner" style="background-color: rgb(255, 222, 0); background-size: cover;">
-      <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8">
-          <img src="{% static 'img/bbc_banner.svg' %}" class="img-responsive" />
+      <div class="row hidden-xs hidden-sm">
+        <div class="col-md-1 col-lg-2"></div>
+        <div class="col-md-5 col-lg-4">
+          <img src="{% static 'img/bbc_banner_part1.svg' %}" class="img-responsive pull-left" />
         </div>
-        <div class="col-md-2"></div>
+        <div class="col-md-5 col-lg-4">
+          <img src="{% static 'img/bbc_banner_part2.svg' %}" class="img-responsive pull-right" />
+        </div>
+        <div class="col-md-1 col-lg-2"></div>
       </div>
     </div>
     <div class="navbar navbar-inverse navbar-custom">
