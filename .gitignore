@@ -23,3 +23,6 @@ emacs-config.el
 data/
 populate_members.py
 *.zip
+
+# todo
+todo.org

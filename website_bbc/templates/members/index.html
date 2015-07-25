@@ -6,7 +6,29 @@
 
 {% block body_block %}
 
-<div class="container">
-  <p>Welcome to the members page of the BBC</p>
-</div>
+  <div class="container">
+    <a class="btn btn-default" href="/members/scientific_societies/" role="button">Scientific Societies</a>
+    <a class="btn btn-default" href="/members/pharmaceutical_companies/" role="button">Pharmaceutical Companies</a>
+    <a class="btn btn-default" href="/members/patient_associations/" role="button">Patient Associations</a>
+    {% if members %}
+      <h1>{{ title }} Members</h1>
+      <table class="table table-hover">
+        {% for member in members %}
+          <tr>
+            <td>
+              {{ member.society }}<br />
+            </td>
+            <td>
+              {{ member.name_contact }}<br />
+            </td>
+          </tr>
+        {% endfor %}
+      </table>
+    {% else %}
+      <div class="container">
+        <p>Welcome to the members page of the BBC</p>
+      </div>     
+    {% endif %}
+  </div>
+
 {% endblock %}
