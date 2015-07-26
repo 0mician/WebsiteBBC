@@ -21,6 +21,7 @@ emacs-config.el
 
 # data
 data/
+hires/
 populate_members.py
 *.zip
 
