@@ -1,14 +1,18 @@
 from django.db import models
 
 class SetOfFiles(models.Model):
-    name = models.CharField(('set name'), max_length=225, null=False, blank=False)
+    name = models.CharField(max_length=225, null=False, blank=False)
 
     def __str__(self):
         return self.name 
 
 class File(models.Model):
-    set = models.ForeignKey(SetOfFiles, verbose_name= ('set'))
+    set = models.ForeignKey(SetOfFiles, verbose_name="Related Files")
     file = models.FileField()
+    name = models.CharField(max_length=255, null=True, blank=True)
+
+    def __str__(self):
+        return self.name
 
     def save(self, *args, **kwargs):
         super(File, self).save(*args, **kwargs)
