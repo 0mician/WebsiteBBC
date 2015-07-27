@@ -11,10 +11,12 @@
     {% for event in events_list %}
       <h2>{{ event.name }}</h2>
       <ul>
+        <li>{{ event.details_test }}</li>
         <li>{{ event.start }}</li>
         <li>{{ event.location }}</li>
         <li>{{ event.details }}</li>
-        <li><a href="/media/{{ event.uploaded_files }}">file</a></li>
+        {% for file in events_list.uploaded_files %}
+        {% endfor %}
       </ul>
     {% endfor %}
   {% else %}

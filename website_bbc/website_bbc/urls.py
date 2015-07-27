@@ -25,6 +25,7 @@ urlpatterns = [
     url(r'^admin/', include(admin.site.urls)),
     url(r'^members/', include('members.urls')),
     url(r'^events/', include('events.urls')),
+    url(r'^tinymce/', include('tinymce.urls')),
 ]
 
 if settings.DEBUG:

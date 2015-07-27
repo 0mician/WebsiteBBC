@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce.models import HTMLField
 
 class SetOfFiles(models.Model):
     name = models.CharField(max_length=225, null=False, blank=False)
@@ -24,4 +25,5 @@ class Event(models.Model):
     end = models.DateTimeField(null=True, blank=True)
     location = models.CharField(max_length=255, null=True, blank=True)
     details = models.TextField(max_length=10000, blank=True)
+    details_test = HTMLField(null=True)
     uploaded_files = models.ForeignKey(SetOfFiles, null=True)

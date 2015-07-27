@@ -39,6 +39,7 @@ INSTALLED_APPS = (
     'home',
     'events',
     'members',
+    'tinymce',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -112,3 +113,5 @@ STATICFILES_DIRS = (
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 MEDIA_URL = '/media/'
+
+STATIC_ROOT = ""
