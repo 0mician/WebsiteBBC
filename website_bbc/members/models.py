@@ -20,11 +20,6 @@ class Member(models.Model):
     website_contact = models.URLField(blank=True)
     email_contact = models.EmailField(blank=True)
 
-    def __unicode__(self):
-        return u'%s' % self.society
-
-    # not sure why, the unicode is not called in the admin interface
-    # when selecting a foreignkey to add to a new representative
     def __str__(self):
         return self.society
 

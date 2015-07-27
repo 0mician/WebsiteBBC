@@ -21,4 +21,3 @@ def pharma_companies(request):
     members_list = PharmaMember.objects.order_by('-society')
     context_dic = {'members' : members_list, 'title' : 'Pharmaceutical Companies'}
     return render(request, 'members/index.html', context_dic)
-

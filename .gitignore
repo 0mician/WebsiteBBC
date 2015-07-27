@@ -24,6 +24,7 @@ data/
 hires/
 populate_members.py
 *.zip
+media/
 
 # todo
 todo.org

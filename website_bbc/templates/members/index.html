@@ -6,29 +6,100 @@
 
 {% block body_block %}
 
-  <div class="container">
-    <a class="btn btn-default" href="/members/scientific_societies/" role="button">Scientific Societies</a>
-    <a class="btn btn-default" href="/members/pharmaceutical_companies/" role="button">Pharmaceutical Companies</a>
-    <a class="btn btn-default" href="/members/patient_associations/" role="button">Patient Associations</a>
-    {% if members %}
-      <h1>{{ title }} Members</h1>
-      <table class="table table-hover">
-        {% for member in members %}
-          <tr>
-            <td>
-              {{ member.society }}<br />
-            </td>
-            <td>
-              {{ member.name_contact }}<br />
-            </td>
-          </tr>
-        {% endfor %}
-      </table>
-    {% else %}
-      <div class="container">
-        <p>Welcome to the members page of the BBC</p>
-      </div>     
-    {% endif %}
-  </div>
+<div class="container">
+    <div class="row">
+        <a class="btn btn-default" href="/members/scientific_societies/" role="button">Scientific Societies</a>
+        <a class="btn btn-default" href="/members/pharmaceutical_companies/" role="button">Pharmaceutical Companies</a>
+        <a class="btn btn-default" href="/members/patient_associations/" role="button">Patient Associations</a>
+        {% if members %}
+        <h1>{{ title }} Members</h1>
+        <table class="table table-hover">
+            {% for member in members %}
+            <tr class="clickable">
+                <td class="col-md-6 col-sm-6">
+                    {{ member.society }}<br />
+                    <div hidden class="hiddable">
+                        <ul class="list-unstyled">
+                            {% if member.address != "" %}
+                            <li><em>Address: </em>{{ member.address|linebreaksbr}}</li>
+                            {% endif %}
+
+                            {% if member.registration_number != "" %}
+                            <li><em>Registration: </em>{{ member.address|linebreaksbr}}</li>
+                            {% endif %}
+
+                            {% if member.phone != "" %}
+                            <li><em>Phone: </em>{{ member.phone }}</li>
+                            {% endif %}
+
+                            {% if member.gsm != "" %}
+                            <li><em>GSM: </em>{{ member.gsm|linebreaksbr}}</li>
+                            {% endif %}
+
+                            {% if member.fax != "" %}
+                            <li><em>Fax: </em>{{ member.fax }}</li>
+                            {% endif %}                            
+
+                            {% if member.website != "" %}
+                            <li><em>Website: </em>{{ member.website}}</li>
+                            {% endif %}
+
+                            {% if member.email != "" %}
+                            <li><em>Email: </em>{{ member.email }}</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </td>
+                <td class="col-md-6 col-sm-6">
+                    {{ member.name_contact }}<br />
+                    <div hidden class="hiddable">
+                        <ul class="list-unstyled">
+                            {% if member.title_contact != "" %}
+                            <li><em>Occupation: </em>{{ member.title_contact|linebreaksbr}}</li>
+                            {% endif %}
+
+                            {% if member.address_contact != "" %}
+                            <li><em>Address: </em>{{ member.address_contact|linebreaksbr}}</li>
+                            {% endif %}
+
+                            {% if member.phone_contact != "" %}
+                            <li><em>Phone: </em>{{ member.phone_contact }}</li>
+                            {% endif %}
+
+                            {% if member.gsm_contact != "" %}
+                            <li><em>GSM: </em>{{ member.gsm_contact}}</li>
+                            {% endif %}
+
+                            {% if member.fax_contact != "" %}
+                            <li><em>Fax: </em>{{ member.fax_contact }}</li>
+                            {% endif %}                            
+
+                            {% if member.website_contact != "" %}
+                            <li><em>Website: </em>{{ member.website_contact}}</li>
+                            {% endif %}
+
+                            {% if member.email_contact != "" %}
+                            <li><em>Email: </em>{{ member.email_contact }}</li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <div class="container">
+            <p>Welcome to the members page of the BBC</p>
+        </div>     
+        {% endif %}
+    </div>
+</div>
+<script>
+ $(document).ready(function(){
+     $(".clickable").click(function(){
+         $(this).find(".hiddable").toggle();
+     });
+ });
+</script>
 
 {% endblock %}
