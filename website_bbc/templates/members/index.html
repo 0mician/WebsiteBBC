@@ -41,7 +41,7 @@
                             {% endif %}                            
 
                             {% if member.website != "" %}
-                            <li><em>Website: </em>{{ member.website}}</li>
+                            <li><em>Website: </em>{{ member.website|urlize}}</li>
                             {% endif %}
 
                             {% if member.email != "" %}
@@ -75,7 +75,7 @@
                             {% endif %}                            
 
                             {% if member.website_contact != "" %}
-                            <li><em>Website: </em>{{ member.website_contact}}</li>
+                            <li><em>Website: </em>{{ member.website_contact|urlize}}</li>
                             {% endif %}
 
                             {% if member.email_contact != "" %}

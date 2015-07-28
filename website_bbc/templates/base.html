@@ -53,8 +53,17 @@
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="{% url 'homepage' %}">Home</a></li>
-            <li><a href="/members/">Members</a></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Members<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><a href="/members/scientific_societies/">Scientific Societies</a></li>
+                <li><a href="/members/pharmaceutical_companies/">Pharmaceutical Companies</a></li>
+                <li><a href="/members/patient_associations/">Patient Associations</a></li>
+              </ul>
+            </li>
             <li><a href="/events/">Events</a></li>
+            <li><a href="#">News(TBI)</a></li>
+            <li><a href="#">About(TBI)</a></li>
           </ul>
           <ul class="nav navbar-nav navbar-right hidden-xs">
             <li><a href="/admin/" class="navbar-nav pull-right">Admin</a></li>
