@@ -26,6 +26,7 @@ urlpatterns = [
     url(r'^members/', include('members.urls')),
     url(r'^events/', include('events.urls')),
     url(r'^tinymce/', include('tinymce.urls')),
+    url(r'^home/', include('home.urls')),
 ]
 
 if settings.DEBUG:

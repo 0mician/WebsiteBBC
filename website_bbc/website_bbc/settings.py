@@ -115,3 +115,12 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 STATIC_ROOT = ""
+
+TINYMCE_DEFAULT_CONFIG = {
+    'plugins': "table,xhtmlxtras,paste,searchreplace",
+    'mode' : "textareas",
+    'theme' : 'advanced',
+    'resize' : 'both',
+    'width' : '700',
+    'height' : '500'
+}
