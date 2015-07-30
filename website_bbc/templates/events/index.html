@@ -6,21 +6,29 @@
 
 {% block body_block %}
 
-<div class="container">
-  {% if events_list %}
-    {% for event in events_list %}
-      <h2>{{ event.name }}</h2>
-      <ul>
-        <li>{{ event.details_test }}</li>
-        <li>{{ event.start }}</li>
-        <li>{{ event.location }}</li>
-        <li>{{ event.details }}</li>
-        {% for file in events_list.uploaded_files %}
-        {% endfor %}
-      </ul>
-    {% endfor %}
-  {% else %}
-    <p>No events yet</p>
-  {% endif %}
-</div>
+  <div class="container">
+    <div class="row">
+    {% if events_list %}
+      {% for event in events_list %}
+        <div class="col-md-9">
+          <h2><a href="/events/{{ event.slug }}/">{{ event.name }}</a></h2>
+        </div>
+        <div class="col-md-3">
+          <h3><em>{{ event.start }}</em></h3>
+        </div>
+        <div class="col-md-12">
+          {% autoescape off %}
+            {{ event.details }}
+          {% endautoescape %}
+          {% for file in events_list.uploaded_files %}
+          {% endfor %}
+        <hr/>
+        </div>
+
+      {% endfor %}
+    {% else %}
+      <p>No events yet</p>
+    {% endif %}
+    </div>
+  </div>
 {% endblock %}

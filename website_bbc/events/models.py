@@ -1,4 +1,6 @@
 from django.db import models
+from django.template.defaultfilters import slugify
+
 from tinymce.models import HTMLField
 
 class SetOfFiles(models.Model):
@@ -6,6 +8,9 @@ class SetOfFiles(models.Model):
 
     def __str__(self):
         return self.name 
+
+    class Meta:
+        verbose_name_plural = "Set of files"
 
 class File(models.Model):
     set = models.ForeignKey(SetOfFiles, verbose_name="Related Files")
@@ -19,11 +24,27 @@ class File(models.Model):
         super(File, self).save(*args, **kwargs)
 
 class Event(models.Model):
+
+    TYPE_OF_EVENT = (
+        ('BAW', 'Brain Awareness Week'),
+        ('BBC', 'Belgian Brain Congress'),
+        ('EBC', 'European Brain Council'),
+        ('OTH', 'Other')
+    )
+
     name = models.CharField(max_length=255)
-    url = models.URLField()
-    start = models.DateTimeField()
-    end = models.DateTimeField(null=True, blank=True)
-    location = models.CharField(max_length=255, null=True, blank=True)
-    details = models.TextField(max_length=10000, blank=True)
-    details_test = HTMLField(null=True)
-    uploaded_files = models.ForeignKey(SetOfFiles, null=True)
+    slug = models.SlugField(unique=True)
+    category = models.CharField(max_length=3, choices=TYPE_OF_EVENT)
+    url = models.URLField(null=True, blank=True)
+    start = models.DateField()
+    end = models.DateField(null=True, blank=True)
+    description = models.CharField(max_length=500)
+    details = HTMLField(null=True)
+    uploaded_files = models.ForeignKey(SetOfFiles, null=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Event, self).save(*args, **kwargs)
+
+    def __str__(self):
+        return self.name
