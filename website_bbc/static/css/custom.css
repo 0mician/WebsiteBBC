@@ -2,6 +2,9 @@
 .img-responsive{margin:0 auto}
 .img-responsive{vertical-align:middle}
 
+/* Menu styling in accord with color theme of banner
+-------------------------------------------------- */
+
 .navbar-custom {
     background-color: rgb(255, 222, 0);
     color:rgb(88,88,88) ;
@@ -20,19 +23,7 @@
 .navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
     background-color: #FDB824;
 }
-/*
-.navbar-custom .navbar-nav > .active > a, .navbar-nav > .active > a:hover, .navbar-nav > .active > a:focus {
-    color: rgb(88,88,88);
-    background-color:transparent;
-}
-.navbar-custom .navbar-brand {
-    color:rgb(88,88,88);
-}
 
-.navbar-inverse .navbar-nav>.open>a, .navbar-inverse .navbar-nav>.open>a:focus, .navbar-inverse .navbar-nav>.open>a:hover {
-    color: #585847;
-    background-color: #FFC200;
-}*/
 /* Sticky footer styles
 -------------------------------------------------- */
 html {
@@ -80,4 +71,20 @@ body {
   left: 0;
   height: 400px;
   margin: 0 auto;
+}
+
+/* Homepage
+-------------------------------------------------- */
+
+.event-name-align {
+    float: left;
+}
+
+.event-start-align {
+    float: right;
+}
+/* Other
+-------------------------------------------------- */
+th {
+    font-size: x-large;
 }
