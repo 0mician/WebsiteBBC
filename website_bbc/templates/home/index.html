@@ -6,14 +6,30 @@
 
 {% block body_block %}
 
-
   <div class="container">
     <h3>Welcome to the website of the Belgian Brain Council</h3>
     <hr />
     <div class="row">
       <div class="col-md-6">
         <h4>Events</h4>
+        {% if events %}
+          {% for event in events %}
+            <div class="event-name-align">
+              <a href="/events/{{ event.slug }}/">{{ event.name }}</a>
+            </div>
+            <div class="event-start-align">
+              <em>{{ event.start }}</em>
+            </div>
+            <br />
+            <p>{{ event.description }}</p>
+            <br />
+          {% endfor %}
+          <br />
+        {% else %}
+          <p>No events in the near future, check out the <a href="/events/">events page</a></p>
+        {% endif %}
       </div>
+
       <div class="col-md-6">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
@@ -63,6 +79,7 @@
               </div>
             </div>
           </div>
+
           <!-- Left and right controls -->
           <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
             <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -73,34 +90,38 @@
             <span class="sr-only">Next</span>
           </a>         
         </div>
-      </div>
+      </div>  
     </div>
+    <hr />     
   </div>
-  <hr />
+
+
   <div class=container>
     <div class=row>
-      <h4>News</h4>
-      <ul class="list-unstyled">
-        <li><p>
-            Dec 11-12: BBC participates to the Non Invasive Brain
-            stimulation techniques (NIBS) for psychiatric disorders: First
-            European Meeting: THASGASTE GENT</p>
-        </li>
-        
-        <li><p>
-            June 15: BBC General assembly: 17:00 University Foundation</p>
-        </li>
-        
-        <li><p>
-            May 22: BBC participates to the 11th Meeting of the Belgian
-            Society for Neuroscience, Mons</p>
-        </li>
-        
-        <li><p>
-            February 2015: Chaire Francqui pour Jean Schoenen: Leçon
-            inaugurale le 26 Février à 17h - plus d'info ici</p>
-        </li>
-      </ul>
+      <div class="col-md-12">
+        <h4>News</h4>
+        <ul class="list-unstyled">
+          <li><p>
+              Dec 11-12: BBC participates to the Non Invasive Brain
+              stimulation techniques (NIBS) for psychiatric disorders: First
+              European Meeting: THASGASTE GENT</p>
+          </li>
+          
+          <li><p>
+              June 15: BBC General assembly: 17:00 University Foundation</p>
+          </li>
+          
+          <li><p>
+              May 22: BBC participates to the 11th Meeting of the Belgian
+              Society for Neuroscience, Mons</p>
+          </li>
+          
+          <li><p>
+              February 2015: Chaire Francqui pour Jean Schoenen: Leçon
+              inaugurale le 26 Février à 17h - plus d'info ici</p>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 
