@@ -14,9 +14,16 @@
         {% if members %}
         <h1>{{ title }} Members</h1>
         <table class="table table-hover">
+          <thead>
+            <tr> 
+              <th class="col-md-6 col-sm-6 col-xs-6">Member</th> 
+              <th class="co-md-6 col-sm-6 col-xs-6">Contact</th>
+            </tr>
+          </thead>
+          <tbody>
             {% for member in members %}
             <tr class="clickable">
-                <td class="col-md-6 col-sm-6">
+                <td class="col-md-6 col-sm-6 col-xs-6">
                     {{ member.society }}<br />
                     <div hidden class="hiddable">
                         <ul class="list-unstyled">
@@ -50,7 +57,7 @@
                         </ul>
                     </div>
                 </td>
-                <td class="col-md-6 col-sm-6">
+                <td class="col-md-6 col-sm-6 col-xs-6">
                     {{ member.name_contact }}<br />
                     <div hidden class="hiddable">
                         <ul class="list-unstyled">
@@ -86,6 +93,7 @@
                 </td>
             </tr>
             {% endfor %}
+          </tbody>
         </table>
         {% else %}
         <div class="container">
