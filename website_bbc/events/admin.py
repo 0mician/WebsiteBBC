@@ -5,7 +5,7 @@ class EventAdmin(admin.ModelAdmin):
     list_display = ['name', 'start', 'category', 'uploaded_files']
     fieldsets = (
         (None, {
-            'fields': ('name', 'category', 'url', 'start', 'end', 'details', 'uploaded_files')
+            'fields': ('name', 'description', 'category', 'url', 'start', 'end', 'details', 'uploaded_files')
         }),
     )
 
