@@ -1,0 +1,14 @@
+.git/
+.gitignore
+README.md
+requirements.txt
+todo.org
+exclude-list.txt
+transfer.sh
+#todo.org#
+venv/
+files/
+website_bbc/db.sqlite3
+website_bbc/static/img/hires/
+website_bbc/data/
+website_bbc/website_bbc/settings.py
