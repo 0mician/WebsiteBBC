@@ -41,7 +41,7 @@ INSTALLED_APPS = (
     'events',
     'members',
     'tinymce',
-    'events',
+    'news',
 )
 
 MIDDLEWARE_CLASSES = (

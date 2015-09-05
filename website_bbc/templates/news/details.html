@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}News{% endblock %}
+
+{% block body_block %}
+
+  <div class="container">
+    <div class="row">
+      {% if news %}
+        <div class="col-md-9">
+          <h2>{{ news.name }}</h2>
+        </div>
+        <div class="col-md-3">
+          <h3>{{ news.date }}</h3>
+        </div>
+        <div class="col-md-12">
+          {% autoescape off %}
+            {{ news.details }}
+          {% endautoescape %}
+          {% if files %}
+            <p>Here is a list of files associated with the news:</p>
+            <ul class="list-unstyled">
+            {% for file in files %}
+              <li><a href="/media/{{ file.file }}">{{ file.name }}</a></li>
+            {% endfor %}
+          {% else %}
+          {% endif %}
+        </div>
+      {% else %}
+        <p>No news with that name found</p>
+      {% endif %}
+    </div>
+  </div>
+
+{% endblock %}

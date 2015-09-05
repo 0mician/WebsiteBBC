@@ -27,6 +27,7 @@ urlpatterns = [
     url(r'^events/', include('events.urls')),
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^home/', include('home.urls')),
+    url(r'^news/', include('news.urls')),
 ]
 
 if settings.DEBUG:
