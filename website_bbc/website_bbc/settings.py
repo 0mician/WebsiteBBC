@@ -36,10 +36,12 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'debug_toolbar.apps.DebugToolbarConfig',
     'home',
     'events',
     'members',
     'tinymce',
+    'events',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -90,7 +92,7 @@ DATABASES = {
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Europe/Brussels'
 
 USE_I18N = True
 
@@ -123,4 +125,40 @@ TINYMCE_DEFAULT_CONFIG = {
     'resize' : 'both',
     'width' : '700',
     'height' : '500'
+}
+
+LOGGING = {
+    'version' : 1,
+    'disable_existing_loggers': False,
+    'formatters' : {
+        'standard' : {
+            'format' : "[%(asctime)s] %(levelname)s [%(name)s:%(lineno)s] %(message)s",
+            'datefmt' : "%d/%b/%Y %H:%M:%S"
+        },
+    },
+    'handlers' : {
+        'null' : {
+            'level' : 'DEBUG',
+            'class' : 'django.utils.log.NullHandler',
+        },
+        'profile_file' : {
+            'level' : 'DEBUG',
+            'class' : 'logging.FileHandler',
+            'filename' : BASE_DIR + "/profile.log",
+            'formatter' : 'standard',
+        },
+        'logfile' : {
+            'level' : 'DEBUG',
+            'class' : 'logging.handlers.RotatingFileHandler',
+            'filename' : BASE_DIR + "/website_bbc.log",
+            'maxBytes' : 50000,
+            'backupCount' : 0,
+            'formatter' : 'standard',
+        },
+        'console' : {
+            'level' : 'INFO',
+            'class' : 'logging.StreamHandler',
+            'formatter' : 'standard',
+        },
+    },
 }
