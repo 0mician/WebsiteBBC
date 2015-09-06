@@ -9,7 +9,6 @@ def index(request):
 
 def event_details(request, event_slug):
     context_dict = {}
-    print(event_slug)
     try:
         event = Event.objects.get(slug=event_slug)
         context_dict['event'] = event
