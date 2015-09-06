@@ -37,11 +37,14 @@ INSTALLED_APPS = (
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'debug_toolbar.apps.DebugToolbarConfig',
+    'django.contrib.sites',
     'home',
     'events',
     'members',
     'tinymce',
     'news',
+    'photologue',
+    'sortedm2m',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -86,6 +89,7 @@ DATABASES = {
     }
 }
 
+SITE_ID = 1
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/

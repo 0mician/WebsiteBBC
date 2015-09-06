@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^tinymce/', include('tinymce.urls')),
     url(r'^home/', include('home.urls')),
     url(r'^news/', include('news.urls')),
+    url(r'^photologue/', include('photologue.urls', namespace='photologue')),
 ]
 
 if settings.DEBUG:
