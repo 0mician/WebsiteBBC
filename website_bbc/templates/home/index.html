@@ -100,27 +100,22 @@
     <div class=row>
       <div class="col-md-12">
         <h4>News</h4>
-        <ul class="list-unstyled">
-          <li><p>
-              Dec 11-12: BBC participates to the Non Invasive Brain
-              stimulation techniques (NIBS) for psychiatric disorders: First
-              European Meeting: THASGASTE GENT</p>
-          </li>
-          
-          <li><p>
-              June 15: BBC General assembly: 17:00 University Foundation</p>
-          </li>
-          
-          <li><p>
-              May 22: BBC participates to the 11th Meeting of the Belgian
-              Society for Neuroscience, Mons</p>
-          </li>
-          
-          <li><p>
-              February 2015: Chaire Francqui pour Jean Schoenen: Leçon
-              inaugurale le 26 Février à 17h - plus d'info ici</p>
-          </li>
-        </ul>
+        {% if news %}
+          {% for new in news %}
+            <div class="event-name-align">
+              <a href="/news/{{ new.slug }}/">{{ new.name }}</a>
+            </div>
+            <div class="event-start-align">
+              <em>{{ new.date }}</em>
+            </div>
+            <br />
+            <p>{{ new.description }}</p>
+            <br />
+          {% endfor %}
+          <br />
+        {% else %}
+          <p>No news at the moment</p>
+        {% endif %}
       </div>
     </div>
   </div>
