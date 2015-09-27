@@ -6,29 +6,26 @@
 
 {% block body_block %}
 
-  <div class="container">
-    <div class="row">
-    {% if news_list %}
-      {% for news in news_list %}
-        <div class="col-md-9">
-          <h2><a href="/news/{{ news.slug }}/">{{ news.name }}</a></h2>
-        </div>
-        <div class="col-md-3">
-          <h3><em>{{ news.start }}</em></h3>
-        </div>
-        <div class="col-md-12">
-          {% autoescape off %}
-            {{ news.details }}
-          {% endautoescape %}
-          {% for file in news_list.uploaded_files %}
-          {% endfor %}
-        <hr/>
-        </div>
-
+  {% if news_list %}
+    {% for news in news_list %}
+      <div class="col-md-9">
+        <h2><a href="/news/{{ news.slug }}/">{{ news.name }}</a></h2>
+      </div>
+      <div class="col-md-3">
+        <h3><em>{{ news.start }}</em></h3>
+      </div>
+      <div class="col-md-12">
+        {% autoescape off %}
+        {{ news.details }}
+        {% endautoescape %}
+        {% for file in news_list.uploaded_files %}
       {% endfor %}
-    {% else %}
-      <p>No news yet</p>
-    {% endif %}
-    </div>
-  </div>
+      <hr/>
+      </div>
+      
+    {% endfor %}
+  {% else %}
+    <p>No news yet</p>
+  {% endif %}
+
 {% endblock %}
