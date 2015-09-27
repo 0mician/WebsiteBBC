@@ -4,12 +4,9 @@
 
 {% block body_block %}
 
-<div class="container">
-  <div class="row">
-    <a class="btn btn-default" href="/home/about/fr/" role="button">A propos du BBC</a>
-    <a class="btn btn-default" href="/home/about/nl/" role="button">Over BBC</a>
-    <a class="btn btn-default" href="/home/about/en/" role="button">About BBC</a>
-    {% block content_lang %}{% endblock %}
-  </div>
-</div>
+  <a class="btn btn-default" href="/home/about/fr/" role="button">A propos du BBC</a>
+  <a class="btn btn-default" href="/home/about/nl/" role="button">Over BBC</a>
+  <a class="btn btn-default" href="/home/about/en/" role="button">About BBC</a>
+  {% block content_lang %}{% endblock %}
+
 {% endblock %}
