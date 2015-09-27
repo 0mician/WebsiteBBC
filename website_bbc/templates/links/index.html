@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}Links{% endblock %}
+
+{% block body_block %}
+
+  <h1>Links</h1>
+  {% if links_list %}
+    <ul>
+      {% for link in links_list %}
+        <li><a href="{{ link.url }}">{{ link.name }}</a></li>
+      {% endfor %}
+    </ul>
+  {% else %}
+    <p>No links yet</p>
+  {% endif %}
+
+{% endblock %}
