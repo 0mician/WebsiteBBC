@@ -45,6 +45,7 @@ INSTALLED_APPS = (
     'news',
     'photologue',
     'sortedm2m',
+    'links',
 )
 
 MIDDLEWARE_CLASSES = (
