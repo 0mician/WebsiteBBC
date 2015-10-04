@@ -26,6 +26,7 @@ hires/
 populate_members.py
 *.zip
 media/
+tutos/
 
 # todo
 todo.org
