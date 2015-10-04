@@ -88,3 +88,11 @@ body {
 th {
     font-size: x-large;
 }
+
+#gallery-float {
+    float: left;
+}
+
+.btn-custom {
+    margin-top: 20px;
+}
