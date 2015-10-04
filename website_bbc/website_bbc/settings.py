@@ -142,28 +142,18 @@ LOGGING = {
         },
     },
     'handlers' : {
-        'null' : {
-            'level' : 'DEBUG',
-            'class' : 'django.utils.log.NullHandler',
-        },
-        'profile_file' : {
+        'file' : {
             'level' : 'DEBUG',
             'class' : 'logging.FileHandler',
-            'filename' : BASE_DIR + "/profile.log",
-            'formatter' : 'standard',
+            'filename' : os.path.join(BASE_DIR, 'website_bbc.log'),
+            'formatter' : 'standard'
         },
-        'logfile' : {
-            'level' : 'DEBUG',
-            'class' : 'logging.handlers.RotatingFileHandler',
-            'filename' : BASE_DIR + "/website_bbc.log",
-            'maxBytes' : 50000,
-            'backupCount' : 0,
-            'formatter' : 'standard',
-        },
-        'console' : {
-            'level' : 'INFO',
-            'class' : 'logging.StreamHandler',
-            'formatter' : 'standard',
+    },
+    'loggers': {
+        'django': {
+            'handlers':['file'],
+            'propagate': True,
+            'level':'DEBUG',
         },
     },
 }
